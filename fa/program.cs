@@ -57,16 +57,18 @@ namespace fans
             c.Transitions['1'] = d;
             d.Transitions['1'] = d;
             d.Transitions['0'] = e;
+            e.Transitions['0'] = e;
+            e.Transitions['1'] = e;
         }
         public bool? Run(IEnumerable<char> s)
         {
             State current = InitialState;
-            foreach (var c in s) // цикл по всем символам 
+            foreach (var c in s) // Г¶ГЁГЄГ« ГЇГ® ГўГ±ГҐГ¬ Г±ГЁГ¬ГўГ®Г«Г Г¬ 
             {
-                current = current.Transitions[c]; // меняем состояние на то, в которое у нас переход
-                if (current == null)              // если его нет, возвращаем признак ошибки
+                current = current.Transitions[c]; // Г¬ГҐГ­ГїГҐГ¬ Г±Г®Г±ГІГ®ГїГ­ГЁГҐ Г­Г  ГІГ®, Гў ГЄГ®ГІГ®Г°Г®ГҐ Гі Г­Г Г± ГЇГҐГ°ГҐГµГ®Г¤
+                if (current == null)              // ГҐГ±Г«ГЁ ГҐГЈГ® Г­ГҐГІ, ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ ГЇГ°ГЁГ§Г­Г ГЄ Г®ГёГЁГЎГЄГЁ
                     return null;
-                // иначе переходим к следующему
+                // ГЁГ­Г Г·ГҐ ГЇГҐГ°ГҐГµГ®Г¤ГЁГ¬ ГЄ Г±Г«ГҐГ¤ГіГѕГ№ГҐГ¬Гі
             }
             return current.IsAcceptState;
         }
@@ -122,12 +124,12 @@ namespace fans
         public bool? Run(IEnumerable<char> s)
         {
             State current = InitialState;
-            foreach (var c in s) // цикл по всем символам 
+            foreach (var c in s) // Г¶ГЁГЄГ« ГЇГ® ГўГ±ГҐГ¬ Г±ГЁГ¬ГўГ®Г«Г Г¬ 
             {
-                current = current.Transitions[c]; // меняем состояние на то, в которое у нас переход
-                if (current == null)              // если его нет, возвращаем признак ошибки
+                current = current.Transitions[c]; // Г¬ГҐГ­ГїГҐГ¬ Г±Г®Г±ГІГ®ГїГ­ГЁГҐ Г­Г  ГІГ®, Гў ГЄГ®ГІГ®Г°Г®ГҐ Гі Г­Г Г± ГЇГҐГ°ГҐГµГ®Г¤
+                if (current == null)              // ГҐГ±Г«ГЁ ГҐГЈГ® Г­ГҐГІ, ГўГ®Г§ГўГ°Г Г№Г ГҐГ¬ ГЇГ°ГЁГ§Г­Г ГЄ Г®ГёГЁГЎГЄГЁ
                     return null;
-                // иначе переходим к следующему
+                // ГЁГ­Г Г·ГҐ ГЇГҐГ°ГҐГµГ®Г¤ГЁГ¬ ГЄ Г±Г«ГҐГ¤ГіГѕГ№ГҐГ¬Гі
             }
             return current.IsAcceptState;
         }
